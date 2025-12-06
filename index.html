@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveAvatar Embed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background: #ffffff;
+            z-index: 10;
+        }
+
+        .logo {
+            max-height: 40px;
+            max-width: 150px;
+            object-fit: contain;
+        }
+
+        .logo-left {
+            margin-right: auto;
+        }
+
+        .logo-right {
+            margin-left: auto;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .iframe-wrapper {
+            width: min(calc(100vw - 40px), calc((100vh - 100px) * 16 / 9));
+            height: min(calc((100vw - 40px) * 9 / 16), calc(100vh - 100px));
+            aspect-ratio: 16/9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: #000;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 8px 15px;
+            }
+
+            .logo {
+                max-height: 30px;
+                max-width: 100px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .iframe-wrapper {
+                width: min(calc(100vw - 20px), calc((100vh - 80px) * 16 / 9));
+                height: min(calc((100vw - 20px) * 9 / 16), calc(100vh - 80px));
+            }
+
+            .iframe-wrapper {
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="Logo-moodie (1).png" alt="Logo" class="logo logo-left">
+            <img src="Screenshot 2025-11-08 at 10.56.23.png" alt="Logo" class="logo logo-right">
+        </header>
+        <main class="content">
+            <div class="iframe-wrapper">
+                <iframe 
+                    src="https://embed.liveavatar.com/v1/1a0b24c1-f381-4aa0-921c-f6bf71459aec" 
+                    allow="microphone" 
+                    title="LiveAvatar Embed">
+                </iframe>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
